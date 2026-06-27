@@ -32,6 +32,8 @@ if( not replay)
 	{
 		array_push(replay_timeline,wait);
 	}
+	
+	come_here_step();
 }
 else
 {
@@ -45,13 +47,17 @@ if(_wall)
 {
 	x = xprevious;
 	y = yprevious;
+	if(not audio_is_playing(snd_wall_hit))
+		//audio_play_sound_at(snd_wall_hit,x-_wall.x,y-_wall.y,0,14,room_width,room_width,false,3);
+		audio_play_sound_at(snd_wall_hit,(_left-_right)*32,(_down-_up)*32,0,16,33,1,false,3,obj_control.play_sound/obj_control.play_sound_max);
 }
 
+//audio_listener_set_position(0,x,y,0);
 if(instance_place(x,y,obj_goal))
 {
 	if(not replay)
 	{
-		game_set_speed(180,gamespeed_fps);
+		game_set_speed( array_length(replay_timeline) div 5,gamespeed_fps);
 		replay = true;
 		x = xstart;
 		y = ystart;

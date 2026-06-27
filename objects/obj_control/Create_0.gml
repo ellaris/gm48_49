@@ -2,19 +2,20 @@
 // W tym edytorze możesz zapisać swój kod
 
 
-
+audio_falloff_set_model(audio_falloff_exponent_distance);
 
 show_settings = false;
 show_settings_anim = 0;
 
-play_sound = true;
+play_sound_max = 3;
+play_sound = 3;
 
 draw_menu = function(){	array_foreach(menu_buttons,function(_val,_i) {_val.draw()})}
 
-draw_settings = function(){	array_foreach(settings_buttons,function(_val,_i) {_val.draw(0,_val.ypos*obj_control.show_settings_anim-_val.ypos,1-obj_control.play_sound)})}
+draw_settings = function(){	array_foreach(settings_buttons,function(_val,_i) {_val.draw(0,_val.ypos*obj_control.show_settings_anim-_val.ypos,obj_control.play_sound)})}
 
 toggle_settings = function(){	show_settings = not show_settings;}
-toggle_sound = function(){	play_sound = not play_sound;}
+toggle_sound = function(){	play_sound = max(1,(play_sound+1 ) % (play_sound_max+1));}
 
 ui_button = function(_xpos,_ypos,_icon,_method,_method_args = [],_color = c_silver) constructor{
 	xpos = _xpos;

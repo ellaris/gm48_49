@@ -22,10 +22,12 @@
     {"name":"obj_player","order":2,"path":"objects/obj_player/obj_player.yy",},
     {"name":"spr_ui_options","order":2,"path":"sprites/spr_ui_options/spr_ui_options.yy",},
     {"name":"spr_goal","order":6,"path":"sprites/spr_goal/spr_goal.yy",},
+    {"name":"snd_come_here","order":2,"path":"sounds/snd_come_here/snd_come_here.yy",},
     {"name":"obj_goal","order":3,"path":"objects/obj_goal/obj_goal.yy",},
     {"name":"rm_level1","order":1,"path":"rooms/rm_level1/rm_level1.yy",},
     {"name":"spr_ui_start","order":1,"path":"sprites/spr_ui_start/spr_ui_start.yy",},
     {"name":"spr_player","order":5,"path":"sprites/spr_player/spr_player.yy",},
     {"name":"spr_ui_sound","order":3,"path":"sprites/spr_ui_sound/spr_ui_sound.yy",},
+    {"name":"snd_step","order":1,"path":"sounds/snd_step/snd_step.yy",},
   ],
 }
